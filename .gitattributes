@@ -3,3 +3,8 @@
 
 # Mark HTML files as documentation
 *.html linguist-documentation=true
+
+# Ensure other files are also classified correctly
+*.csproj linguist-language=XML
+*.json linguist-language=JSON
+*.config linguist-language=XML
