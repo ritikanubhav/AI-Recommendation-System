@@ -1,0 +1,11 @@
+C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\Pearson.Entities\bin\Debug\net8.0\Pearson.Entities.deps.json
+C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\Pearson.Entities\bin\Debug\net8.0\Pearson.Entities.dll
+C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\Pearson.Entities\bin\Debug\net8.0\Pearson.Entities.pdb
+C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\Pearson.Entities\obj\Debug\net8.0\Pearson.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\Pearson.Entities\obj\Debug\net8.0\Pearson.Entities.AssemblyInfoInputs.cache
+C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\Pearson.Entities\obj\Debug\net8.0\Pearson.Entities.AssemblyInfo.cs
+C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\Pearson.Entities\obj\Debug\net8.0\Pearson.Entities.csproj.CoreCompileInputs.cache
+C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\Pearson.Entities\obj\Debug\net8.0\Pearson.Entities.dll
+C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\Pearson.Entities\obj\Debug\net8.0\refint\Pearson.Entities.dll
+C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\Pearson.Entities\obj\Debug\net8.0\Pearson.Entities.pdb
+C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\Pearson.Entities\obj\Debug\net8.0\ref\Pearson.Entities.dll

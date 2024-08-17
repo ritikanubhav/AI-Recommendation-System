@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "7Qrp9WGKE2g=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Ritik.Anubhav\\source\\repos\\PearsonCoreEngineModule\\Pearson.DataLoaderModule\\Pearson.DataLoaderModule.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Ritik.Anubhav\\.nuget\\packages\\csvhelper\\33.0.1\\csvhelper.33.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

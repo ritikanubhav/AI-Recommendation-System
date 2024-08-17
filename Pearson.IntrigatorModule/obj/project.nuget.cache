@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "VIIaJYaLTZs=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Ritik.Anubhav\\source\\repos\\PearsonCoreEngineModule\\Pearson.IntrigatorModule\\Pearson.IntrigatorModule.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Ritik.Anubhav\\.nuget\\packages\\csvhelper\\33.0.1\\csvhelper.33.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

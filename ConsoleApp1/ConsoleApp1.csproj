@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pearson.AggrigatorModule\Pearson.AggrigatorModule.csproj" />
+    <ProjectReference Include="..\Pearson.DataLoaderModule\Pearson.DataLoaderModule.csproj" />
+    <ProjectReference Include="..\Pearson.Entities\Pearson.Entities.csproj" />
+    <ProjectReference Include="..\Pearson.IntrigatorModule\Pearson.IntrigatorModule.csproj" />
+  </ItemGroup>
+
+</Project>

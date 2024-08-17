@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Pearson.Entities/1.0.0": {
+        "runtime": {
+          "Pearson.Entities.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Pearson.Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

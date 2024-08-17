@@ -1,0 +1,11 @@
+C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\PearsonCoreEngineModule\bin\Debug\net8.0\PearsonCoreEngineModule.deps.json
+C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\PearsonCoreEngineModule\bin\Debug\net8.0\PearsonCoreEngineModule.dll
+C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\PearsonCoreEngineModule\bin\Debug\net8.0\PearsonCoreEngineModule.pdb
+C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\PearsonCoreEngineModule\obj\Debug\net8.0\PearsonCoreEngineModule.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\PearsonCoreEngineModule\obj\Debug\net8.0\PearsonCoreEngineModule.AssemblyInfoInputs.cache
+C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\PearsonCoreEngineModule\obj\Debug\net8.0\PearsonCoreEngineModule.AssemblyInfo.cs
+C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\PearsonCoreEngineModule\obj\Debug\net8.0\PearsonCoreEngineModule.csproj.CoreCompileInputs.cache
+C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\PearsonCoreEngineModule\obj\Debug\net8.0\PearsonCoreEngineModule.dll
+C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\PearsonCoreEngineModule\obj\Debug\net8.0\refint\PearsonCoreEngineModule.dll
+C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\PearsonCoreEngineModule\obj\Debug\net8.0\PearsonCoreEngineModule.pdb
+C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\PearsonCoreEngineModule\obj\Debug\net8.0\ref\PearsonCoreEngineModule.dll

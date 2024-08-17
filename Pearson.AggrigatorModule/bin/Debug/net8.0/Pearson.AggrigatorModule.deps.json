@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Pearson.AggrigatorModule/1.0.0": {
+        "dependencies": {
+          "Pearson.Entities": "1.0.0"
+        },
+        "runtime": {
+          "Pearson.AggrigatorModule.dll": {}
+        }
+      },
+      "Pearson.Entities/1.0.0": {
+        "runtime": {
+          "Pearson.Entities.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Pearson.AggrigatorModule/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Pearson.Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

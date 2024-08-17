@@ -1,0 +1,202 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "CsvHelper/33.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/CsvHelper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/CsvHelper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Pearson.AggrigatorModule/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Pearson.Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Pearson.AggrigatorModule.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Pearson.AggrigatorModule.dll": {}
+        }
+      },
+      "Pearson.DataLoaderModule/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "CsvHelper": "33.0.1",
+          "Pearson.Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Pearson.DataLoaderModule.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Pearson.DataLoaderModule.dll": {}
+        }
+      },
+      "Pearson.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Pearson.Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Pearson.Entities.dll": {}
+        }
+      },
+      "PearsonCoreEngineModule/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/PearsonCoreEngineModule.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PearsonCoreEngineModule.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CsvHelper/33.0.1": {
+      "sha512": "fev4lynklAU2A9GVMLtwarkwaanjSYB4wUqO2nOJX5hnzObORzUqVLe+bDYCUyIIRQM4o5Bsq3CcyJR89iMmEQ==",
+      "type": "package",
+      "path": "csvhelper/33.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "csvhelper.33.0.1.nupkg.sha512",
+        "csvhelper.nuspec",
+        "lib/net462/CsvHelper.dll",
+        "lib/net462/CsvHelper.xml",
+        "lib/net47/CsvHelper.dll",
+        "lib/net47/CsvHelper.xml",
+        "lib/net48/CsvHelper.dll",
+        "lib/net48/CsvHelper.xml",
+        "lib/net6.0/CsvHelper.dll",
+        "lib/net6.0/CsvHelper.xml",
+        "lib/net7.0/CsvHelper.dll",
+        "lib/net7.0/CsvHelper.xml",
+        "lib/net8.0/CsvHelper.dll",
+        "lib/net8.0/CsvHelper.xml",
+        "lib/netstandard2.0/CsvHelper.dll",
+        "lib/netstandard2.0/CsvHelper.xml",
+        "lib/netstandard2.1/CsvHelper.dll",
+        "lib/netstandard2.1/CsvHelper.xml"
+      ]
+    },
+    "Pearson.AggrigatorModule/1.0.0": {
+      "type": "project",
+      "path": "../Pearson.AggrigatorModule/Pearson.AggrigatorModule.csproj",
+      "msbuildProject": "../Pearson.AggrigatorModule/Pearson.AggrigatorModule.csproj"
+    },
+    "Pearson.DataLoaderModule/1.0.0": {
+      "type": "project",
+      "path": "../Pearson.DataLoaderModule/Pearson.DataLoaderModule.csproj",
+      "msbuildProject": "../Pearson.DataLoaderModule/Pearson.DataLoaderModule.csproj"
+    },
+    "Pearson.Entities/1.0.0": {
+      "type": "project",
+      "path": "../Pearson.Entities/Pearson.Entities.csproj",
+      "msbuildProject": "../Pearson.Entities/Pearson.Entities.csproj"
+    },
+    "PearsonCoreEngineModule/1.0.0": {
+      "type": "project",
+      "path": "../PearsonCoreEngineModule/PearsonCoreEngineModule.csproj",
+      "msbuildProject": "../PearsonCoreEngineModule/PearsonCoreEngineModule.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "Pearson.AggrigatorModule >= 1.0.0",
+      "Pearson.DataLoaderModule >= 1.0.0",
+      "Pearson.Entities >= 1.0.0",
+      "PearsonCoreEngineModule >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Ritik.Anubhav\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Ritik.Anubhav\\source\\repos\\PearsonCoreEngineModule\\Pearson.IntrigatorModule\\Pearson.IntrigatorModule.csproj",
+      "projectName": "Pearson.IntrigatorModule",
+      "projectPath": "C:\\Users\\Ritik.Anubhav\\source\\repos\\PearsonCoreEngineModule\\Pearson.IntrigatorModule\\Pearson.IntrigatorModule.csproj",
+      "packagesPath": "C:\\Users\\Ritik.Anubhav\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Ritik.Anubhav\\source\\repos\\PearsonCoreEngineModule\\Pearson.IntrigatorModule\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Ritik.Anubhav\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {
+            "C:\\Users\\Ritik.Anubhav\\source\\repos\\PearsonCoreEngineModule\\Pearson.AggrigatorModule\\Pearson.AggrigatorModule.csproj": {
+              "projectPath": "C:\\Users\\Ritik.Anubhav\\source\\repos\\PearsonCoreEngineModule\\Pearson.AggrigatorModule\\Pearson.AggrigatorModule.csproj"
+            },
+            "C:\\Users\\Ritik.Anubhav\\source\\repos\\PearsonCoreEngineModule\\Pearson.DataLoaderModule\\Pearson.DataLoaderModule.csproj": {
+              "projectPath": "C:\\Users\\Ritik.Anubhav\\source\\repos\\PearsonCoreEngineModule\\Pearson.DataLoaderModule\\Pearson.DataLoaderModule.csproj"
+            },
+            "C:\\Users\\Ritik.Anubhav\\source\\repos\\PearsonCoreEngineModule\\Pearson.Entities\\Pearson.Entities.csproj": {
+              "projectPath": "C:\\Users\\Ritik.Anubhav\\source\\repos\\PearsonCoreEngineModule\\Pearson.Entities\\Pearson.Entities.csproj"
+            },
+            "C:\\Users\\Ritik.Anubhav\\source\\repos\\PearsonCoreEngineModule\\PearsonCoreEngineModule\\PearsonCoreEngineModule.csproj": {
+              "projectPath": "C:\\Users\\Ritik.Anubhav\\source\\repos\\PearsonCoreEngineModule\\PearsonCoreEngineModule\\PearsonCoreEngineModule.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      }
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+﻿01-16:teen
+17-30:young
+31-50:middle
+51-60:old
+61-100:senior
