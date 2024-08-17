@@ -8,7 +8,7 @@
 *.csv linguist-vendored
 
 # Exclude directories with non-code files
-Pearson.DataLoaderModule/* linguist-vendored
+**/bin/** linguist-vendored
 docs/* linguist-vendored
 public/* linguist-vendored
 static/* linguist-vendored
