@@ -1,2 +1,2 @@
-# Mark all .csv files in any subfolder as vendored
-**/*.csv linguist-vendored
+# Mark all bin subfolders as vendored
+**/bin/** linguist-vendored
