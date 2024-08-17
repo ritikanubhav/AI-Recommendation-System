@@ -1,4 +1,4 @@
-# Force C# as the primary language
+# Set C# as the main language
 *.cs linguist-language=C#
 
 # Mark HTML files as documentation
@@ -7,7 +7,16 @@
 # Mark .csv files as vendored
 *.csv linguist-vendored
 
-# Ensure other files are also classified correctly
+# Exclude directories with non-code files
+docs/* linguist-vendored
+public/* linguist-vendored
+static/* linguist-vendored
+
+# Ensure other file types are classified correctly
 *.csproj linguist-language=XML
 *.json linguist-language=JSON
 *.config linguist-language=XML
+
+# Mark any other large non-code files as vendored
+*.pdf linguist-vendored
+*.xls linguist-vendored
