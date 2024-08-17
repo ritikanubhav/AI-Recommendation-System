@@ -4,6 +4,9 @@
 # Mark HTML files as documentation
 *.html linguist-documentation=true
 
+# Mark .csv files as vendored
+*.csv linguist-vendored
+
 # Ensure other files are also classified correctly
 *.csproj linguist-language=XML
 *.json linguist-language=JSON
