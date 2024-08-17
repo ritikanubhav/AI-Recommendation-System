@@ -1,3 +1,2 @@
 # Exclude directories with non-code files
-**/bin/** linguist-vendored
 
