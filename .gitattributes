@@ -1,0 +1,5 @@
+# Force C# as the primary language
+*.cs linguist-language=C#
+
+# Mark HTML files as documentation
+*.html linguist-documentation=true
