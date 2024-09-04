@@ -1,80 +1,90 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PearsonCoreEngineModule
 {
-    public class PearsonRecommender:IRecommender
+    public class PearsonRecommender : IRecommender
     {
+        /// <summary>
+        /// Calculates the Pearson correlation coefficient for two integer arrays.
+        /// </summary>
+        /// <param name="baseData">First array of integers.</param>
+        /// <param name="otherData">Second array of integers.</param>
+        /// <returns>Pearson correlation coefficient as a double.</returns>
         public double GetCorrelation(int[] baseData, int[] otherData)
         {
-            int size=baseData.Length;
-            int[]baseArray=new int[size];
-            int[]otherArray=new int[size];
+            int size = baseData.Length;
+            // both array must be of equal length for pearson calculation
+            int[] baseArray = new int[size];
+            int[] otherArray = new int[size];
 
-            //if any array element value is 0 add 1 to both
-            // but not to the elemnet whose value is already 10
-            for(int i=0;i<size; i++)
+            // Adjust the arrays for Pearson calculation 
+            for (int i = 0; i < size; i++)
             {
-                //if other array is smaller in size ( the rest of element is 0 in it) add 1 to both corresponding elements
-                if (i<otherData.Length)
+                // If otherData is shorter, fill the remaining elements of otherArray with 1
+                // and increment corresponding elements in baseArray by 1.
+                if (i < otherData.Length)
                 {
                     baseArray[i] = baseData[i];
                     otherArray[i] = otherData[i];
                 }
                 else
                 {
-                    baseArray[i] += 1;
+                    baseArray[i] = baseData[i] + 1;
                     otherArray[i] = 1;
                 }
 
-                if(baseArray[i]==0)
+                // If an element in baseArray is 0, increment both baseArray and otherArray at that index by 1.
+                // Do not increment if the otherArray element is already 10.
+                if (baseArray[i] == 0)
                 {
                     baseArray[i]++;
-                    if(otherArray[i]!=10)
+                    if (otherArray[i] < 10)
                         otherArray[i]++;
                 }
+
+                // Similarly, if an element in otherArray is 0, increment both arrays,
+                // unless the baseArray element is already 10.
                 if (otherArray[i] == 0)
                 {
                     otherArray[i]++;
-                    if (baseArray[i]!=10)
+                    if (baseArray[i] < 10)
                         baseArray[i]++;
                 }
             }
 
             //---> Pearson Formula Calculations:
-            //X:baseData array and Y:otherData array
+            // X: baseArray, Y: otherArray
 
-            double result = 0; //final pearson coefficient result
-            double n = size;//N 
-            double sumOfXY = 0;//Sum(XY) 
-            double sumOfX = 0;//Sum(X) 
-            double sumOfY = 0;//Sum(Y) 
-            double sumOfSquaresOfX = 0;//Sum(X^2) 
-            double sumOfSquaresOfY= 0;//Sum(Y^2)
+            double result = 0;             // Final Pearson correlation coefficient
+            double n = size;               // N: Number of elements
+            double sumOfXY = 0;            // Sum of products of corresponding elements in X and Y
+            double sumOfX = 0;             // Sum of elements in X
+            double sumOfY = 0;             // Sum of elements in Y
+            double sumOfSquaresOfX = 0;    // Sum of squares of elements in X
+            double sumOfSquaresOfY = 0;    // Sum of squares of elements in Y
 
-            //calculating the above values
+            // Calculate sums and sums of squares
             for (int i = 0; i < n; i++)
             {
                 sumOfXY += baseArray[i] * otherArray[i];
                 sumOfX += baseArray[i];
                 sumOfY += otherArray[i];
-                sumOfSquaresOfX += (baseArray[i]* baseArray[i]);
-                sumOfSquaresOfY += (otherArray[i] * otherArray[i]);
+                sumOfSquaresOfX += baseArray[i] * baseArray[i];
+                sumOfSquaresOfY += otherArray[i] * otherArray[i];
             }
 
-            //R1 = (N * Sum(XY)) – (Sum(X) * Sum(Y))
-            double r1 = (n * sumOfXY) - (sumOfX*sumOfY);
+            // R1 = (N * Sum(XY)) – (Sum(X) * Sum(Y))
+            double r1 = (n * sumOfXY) - (sumOfX * sumOfY);
 
-            //R2 = ((N * Sum(X^2)) – (Sum(X) * Sum(X))) *((N * Sum(Y^2)) – (Sum(Y) *Sum(Y))
-            double r2= ((n * sumOfSquaresOfX) - (sumOfX*sumOfX))*((n*sumOfSquaresOfY)-(sumOfY*sumOfY));
+            // R2 = ((N * Sum(X^2)) – (Sum(X)^2)) * ((N * Sum(Y^2)) – (Sum(Y)^2))
+            double r2 = ((n * sumOfSquaresOfX) - (sumOfX * sumOfX)) * ((n * sumOfSquaresOfY) - (sumOfY * sumOfY));
+
+            // To avoid division by zero, handle the case where r2 is zero
             if (r2 == 0)
-                r2 = 1;
+                return 0;
 
-            //R = R1 / Sqrt(R2)
-            result=r1/Math.Sqrt(r2);
+            // R = R1 / sqrt(R2)
+            result = r1 / Math.Sqrt(r2);
 
             return result;
         }

@@ -16,3 +16,4 @@ C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\Pearson.DataLoaderMo
 C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\Pearson.DataLoaderModule\obj\Debug\net8.0\refint\Pearson.DataLoaderModule.dll
 C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\Pearson.DataLoaderModule\obj\Debug\net8.0\Pearson.DataLoaderModule.pdb
 C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\Pearson.DataLoaderModule\obj\Debug\net8.0\ref\Pearson.DataLoaderModule.dll
+C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\Pearson.DataLoaderModule\obj\Debug\net8.0\Pearson.DataLoaderModule.sourcelink.json

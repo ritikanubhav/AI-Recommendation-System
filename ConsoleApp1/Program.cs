@@ -14,45 +14,48 @@ namespace ConsoleApp1
         {
             try
             {
-                // create a menu for these books, take choice and limit for recommendations ,
-                //  age and state also and
-                // set isbn of preference accordingly
-                // and then generate recommendations
-
-                //0399135782      The Kitchen God's Wife
-                //0345402871      Airframe
-                //0375759778      Prague: A Novel
-                //0060168013      Pigs in Heaven
-                //0553582747      From the Corner of His Eye
-                //042518630X      Purity in Death
-                //0440223571      This Year It Will Be Different: And Other Stories
-                //0060914068      Love, Medicine and Miracles
-                //0156047624      All the King's Men
-                //0245542957      Pacific Northwest
-
-                Stopwatch sw = Stopwatch.StartNew();
                 Preference preference = new Preference
                 {
-                    ISBN= "0440234743",
-                    //ISBN = "0448401738",
-                    Age = 40,
+                    //ISBN= "042518630X",
+                    ISBN= "0440234743", 
+                    //ISBN= "0399135782",
+                    //ISBN = "0440223571",
+                    //ISBN= "0245542957 ",
+
+                    Age = 50,
                     State="washington"
                 };
+
+                Stopwatch sw = Stopwatch.StartNew();
 
                 Console.WriteLine("\n---------------------------------------------------------------------");
                 Console.WriteLine($"Getting Recommendations for Book with ISBN:{preference.ISBN} .....");
                 Console.WriteLine("\n---------------------------------------------------------------------");
+
+                //creating instance of AIRecommendationEngine to use recommend method
                 AIRecommendationEngine aIRecommendationEngine = new AIRecommendationEngine();
+
+                // calling recommendationEngine to get recommnedations
                 List<Book> recommendedBooks =aIRecommendationEngine.Recommend(preference,10) ;
+
                 Console.WriteLine("\n---------------------------------------------------------------------");
-                Console.WriteLine("--------------------------Recommended Books--------------------------");
-                foreach (Book book in recommendedBooks)
+
+                if(recommendedBooks.Count > 0)
                 {
-                    Console.WriteLine($"\t{book.ISBN}\t{book.BookTitle}\t");
+                    Console.WriteLine("--------------------------Recommended Books--------------------------\n");
+                    foreach (Book book in recommendedBooks)
+                    {
+                        Console.WriteLine($"\t\t{book.BookTitle}\t");
+                    }
                 }
+                else
+                {
+                    Console.WriteLine("Sorry! No Recommendations for this book Available.");
+                }
+                
                 Console.WriteLine("---------------------------------------------------------------------");
-                Console.WriteLine("Total time taken for Recommendations : "+sw.ElapsedMilliseconds+" ms");
                 Console.WriteLine("Total Books Scanned in order to get the recommendations: " +aIRecommendationEngine.ScannedBooks);
+                Console.WriteLine("Total time taken for Recommendations : "+sw.ElapsedMilliseconds+" ms");
             }
             catch (Exception ex)
             {

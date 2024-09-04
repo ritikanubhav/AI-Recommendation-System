@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Pearson.DataLoaderModule")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9a68e1a9554d55f7df0822be3969e260a805d6af")]
 [assembly: System.Reflection.AssemblyProductAttribute("Pearson.DataLoaderModule")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Pearson.DataLoaderModule")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

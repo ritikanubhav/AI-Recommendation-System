@@ -111,3 +111,4 @@ C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\Pearson.UnitTest\bin
 C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\Pearson.UnitTest\bin\Debug\net8.0\Pearson.Entities.dll
 C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\Pearson.UnitTest\bin\Debug\net8.0\Pearson.DataLoaderModule.pdb
 C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\Pearson.UnitTest\bin\Debug\net8.0\Pearson.Entities.pdb
+C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\Pearson.UnitTest\obj\Debug\net8.0\Pearson.UnitTest.sourcelink.json

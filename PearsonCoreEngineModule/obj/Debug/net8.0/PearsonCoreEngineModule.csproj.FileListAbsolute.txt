@@ -9,3 +9,4 @@ C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\PearsonCoreEngineMod
 C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\PearsonCoreEngineModule\obj\Debug\net8.0\refint\PearsonCoreEngineModule.dll
 C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\PearsonCoreEngineModule\obj\Debug\net8.0\PearsonCoreEngineModule.pdb
 C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\PearsonCoreEngineModule\obj\Debug\net8.0\ref\PearsonCoreEngineModule.dll
+C:\Users\Ritik.Anubhav\source\repos\PearsonCoreEngineModule\PearsonCoreEngineModule\obj\Debug\net8.0\PearsonCoreEngineModule.sourcelink.json

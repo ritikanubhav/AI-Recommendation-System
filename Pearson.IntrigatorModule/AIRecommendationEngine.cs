@@ -8,80 +8,77 @@ using Pearson.DataLoaderModule;
 using Pearson.AggrigatorModule;
 using PearsonCoreEngineModule;
 using System.Diagnostics;
-using static System.Reflection.Metadata.BlobBuilder;
+
 namespace Pearson.IntrigatorModule
 {
     public class AIRecommendationEngine
     {
-        // creating instances for using their methods
-        public int ScannedBooks=0;
-        IDataLoader DataLoader=new CsvDataLoader();
-        IRecommender Recommender=new PearsonRecommender();
-        IRatingsAggrigator Aggrigator=new RatingsAggrigator();
+        // Creating instances of various modules for loading data, aggregating ratings, and calculating recommendations.
+        public int ScannedBooks = 0;
+        IDataLoader DataLoader = new CsvDataLoader();
+        IRecommender Recommender = new PearsonRecommender();
+        IRatingsAggrigator Aggrigator = new RatingsAggrigator();
 
-        public List<Book> Recommend(Preference preference,int limit)
+        /// <summary>
+        /// Recommends a list of books based on user preferences, using Pearson correlation to determine similarity.
+        /// </summary>
+        /// <param name="preference">User preferences including state, age group, and a specific book ISBN.</param>
+        /// <param name="limit">The maximum number of books to recommend.</param>
+        /// <returns>A list of recommended books.</returns>
+        public List<Book> Recommend(Preference preference, int limit)
         {
-            // list to store Recommended books
-            Console.WriteLine("..................BooksData loading started..................");
-                Stopwatch sw = Stopwatch.StartNew();
+            // List to store the recommended books.
             List<Book> recommendedBooks = new List<Book>();
-            BookDetails bookDetails= DataLoader.Load();
-            Console.WriteLine("...............Loading completed successfully in "+ sw.ElapsedMilliseconds+" ms............");
-            Console.WriteLine("--------------------------------------------------------------");
-            Console.WriteLine("Aggregator called for other arrays.............");
-            var aggregate = Aggrigator.Aggrigate(bookDetails, preference);
-            Console.WriteLine($"--------------------Aggregator finished:{aggregate.Count} items-----------------------");
-            
-            // base array for pearson calculation
-            Console.WriteLine("Aggregator called for base array");
-            int[] baseArray = aggregate[preference.ISBN].ToArray();
-            Console.WriteLine("Aggregator ratings for base array");
-            for(int i=0;i<baseArray.Length;i++)
-            {
-                Console.Write(baseArray[i]+" ");
-            }
-            Console.WriteLine();
 
-            int count = 1;
-            Console.WriteLine("----------Total books to be scanned: "+ bookDetails.Books.Count+"-----------");
-            Console.WriteLine("---------------------------------------------------------");
-           
-            List<string> isbnlist = new List<string>();
-            foreach(var kvp in aggregate)
+            // Load book details and measure the time taken for loading.
+            Console.WriteLine("..................1. Books Data loading started..................\n");
+            Stopwatch sw = Stopwatch.StartNew();
+            BookDetails bookDetails = DataLoader.Load();
+            Console.WriteLine("...............Loading completed successfully in " + sw.ElapsedMilliseconds + " ms............\n");
+
+            // Aggregate ratings based on user preferences and measure the time taken.
+            Console.WriteLine("..................2. Aggregation Phase Started..................\n");
+            sw.Restart();
+            var aggregate = Aggrigator.Aggrigate(bookDetails, preference);
+            Console.WriteLine($"\n...............Aggregation completed Successfully in " + sw.ElapsedMilliseconds + " ms............\n");
+
+            // check if aggrigate returned contains preference book or not
+            if(aggregate == null || !(aggregate.ContainsKey(preference.ISBN)))
             {
-                string isbn=kvp.Key;
+                return recommendedBooks; //returning empty recommendedBooks array
+            }
+
+            // Get the base array for Pearson correlation calculation using the preferred ISBN.
+            int[] baseArray = aggregate[preference.ISBN].ToArray();
+            
+            // Variable to track the current number of recommendations.
+            int recommendationCount = 0;
+
+            // List to store the ISBNs of recommended books.
+            List<string> isbnList = new List<string>();
+            foreach (var kvp in aggregate)
+            {
+                string isbn = kvp.Key;
                 if (isbn != preference.ISBN)
                 {
                     int[] otherArray = aggregate[isbn].ToArray();
-                    //Console.WriteLine("Calculation started for the array" + count);
-                    double pearsonValue = Recommender.GetCorrelation(baseArray, otherArray);
-                    //Console.WriteLine("calculation ended for the array with pearson value= "+pearsonValue);
 
-                    //BookWithPearsonValue[book] = pearsonValue;
+                    // Calculate the Pearson correlation coefficient between the base book and the current book.
+                    double pearsonValue = Recommender.GetCorrelation(baseArray, otherArray);
+
                     ScannedBooks++;
-                    if (pearsonValue > 0.5)//good recommendation
+                    if (pearsonValue > 0.75) // Consider it a good recommendation if the Pearson value is greater than 0.75.
                     {
-                        isbnlist.Add(isbn);
-                        //Console.WriteLine($"Recommendation {count}:\t Pearson coefficient:{pearsonValue}");
-                        count++;
+                        isbnList.Add(isbn);
+                        recommendationCount++;
                     }
-                    if (count > limit)
-                    {
-                        break;
-                    }
+                    if (recommendationCount >= limit)
+                        break; // Stop if the recommendation limit is reached.
                 }
             }
-            recommendedBooks= bookDetails.Books.Where(book => isbnlist.Contains(book.ISBN)).ToList();
 
-
-            //sorting all books based on pearson value
-            //var sortedRecommendations = BookWithPearsonValue.OrderByDescending(kvp => kvp.Value).ToList();
-
-            //getting the books as per limit
-            //for (int i = 0; i < limit; i++)
-            //{
-            //    recommendedBooks.Add(sortedRecommendations[i].Key);
-            //}
+            // Retrieve the recommended books from the book details using the list of ISBNs.
+            recommendedBooks = bookDetails.Books.Where(book => isbnList.Contains(book.ISBN)).ToList();
 
             return recommendedBooks;
         }

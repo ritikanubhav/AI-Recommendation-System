@@ -11,14 +11,13 @@ namespace PearsonCoreEngine.UnitTest
         }
 
         [Test]
-        public void CalculatePearsonCoefficient_AllNonZeroElementsforEqualSizedArray_ShouldGiveExpectedtValue()
+        public void CalculatePearsonCoefficient_IfAllNonZeroElementsforEqualSizedArray_ShouldGiveExpectedtValue()
         {
             //Arrange
-            int[] array1 = { 20, 24, 17 };
-            int[] array2 = { 30, 20, 27 };
-            //int[] array1 = { 5 };
-            //int[] array2 = { 5 };
-            double expectedRes = -0.739853246;
+            int[] array1 = { 1,2,3 };
+            int[] array2 = { 1,2,4 };
+            
+            double expectedRes = 0.981980506;
             double tolerance = 1e-8;
 
             //Act
@@ -28,12 +27,12 @@ namespace PearsonCoreEngine.UnitTest
             Assert.AreEqual(expectedRes,res,tolerance);
         }
         [Test]
-        public void CalculatePearsonCoefficient_Array1IsSmallerThanArray2_ShouldGiveExpectedtValue()
+        public void CalculatePearsonCoefficient_IfArray1IsSmallerThanArray2_ShouldGiveExpectedtValue()
         {
             //Arrange
-            int[] array1 = { 20, 24, 17 };
-            int[] array2 = { 30, 20, 27, 2 };
-            double expectedRes = -0.739853246;
+            int[] array1 = { 1,2,3 };
+            int[] array2 = { 1,2,3,4 };
+            double expectedRes = 1.0;
             double tolerance = 1e-8;
 
             //Act
@@ -43,12 +42,12 @@ namespace PearsonCoreEngine.UnitTest
             Assert.AreEqual(expectedRes, res, tolerance);
         }
         [Test]
-        public void CalculatePearsonCoefficient_Array1IsLargerThanArray2_ShouldGiveExpectedtValue()
+        public void CalculatePearsonCoefficient_IfArray1IsLargerThanArray2_ShouldGiveExpectedtValue()
         {
             //Arrange
-            int[] array1 = { 20, 24, 12, 17 };
-            int[] array2 = { 30, 20, 27 };
-            double expectedRes = 0.7403647469;
+            int[] array1 = { 1,2,3,4 };
+            int[] array2 = { 1,2,3 };
+            double expectedRes = -0.050964719143;
             double tolerance = 1e-8;
 
             //Act
@@ -58,12 +57,12 @@ namespace PearsonCoreEngine.UnitTest
             Assert.AreEqual(expectedRes, res, tolerance);
         }
         [Test]
-        public void CalculatePearsonCoefficient_ArrayContainsZeroValues_ShouldGiveExpectedtValue()
+        public void CalculatePearsonCoefficient_IfArrayContainsZeroAsElements_ShouldGiveExpectedtValue()
         {
             //Arrange
-            int[] array1 = { 20, 0, 0, 17 };
-            int[] array2 = { 30, 0, 27 ,0};
-            double expectedRes = 0.0928491184;
+            int[] array1 = { 1, 0, 0, 2};
+            int[] array2 = { 3, 0, 4 ,2};
+            double expectedRes = -0.292770021884;
             double tolerance = 1e-8;
 
             //Act
@@ -72,5 +71,53 @@ namespace PearsonCoreEngine.UnitTest
             //Assert
             Assert.AreEqual(expectedRes, res, tolerance);
         }
+
+        [Test]
+        public void CalculatePearsonCoefficient_IfExactSameArray_ShouldReturnOne()
+        {
+            //Arrange
+            int[] array1 = {1,2,3 };
+            int[] array2 = { 1,2,3 };
+            double expectedRes = 1.0;
+            double tolerance = 1e-8;
+
+            //Act
+            double res = recommender.GetCorrelation(array1, array2);
+
+            //Assert
+            Assert.AreEqual(expectedRes, res, tolerance);
+        }
+        [Test]
+        public void CalculatePearsonCoefficient_IfCompletelyDifferentArray_ShouldReturnNegativeOne()
+        {
+            //Arrange
+            int[] array1 = { 1, 2, 3 };
+            int[] array2 = { 3,2,1};
+            double expectedRes = -1.0;
+            double tolerance = 1e-8;
+
+            //Act
+            double res = recommender.GetCorrelation(array1, array2);
+
+            //Assert
+            Assert.AreEqual(expectedRes, res, tolerance);
+        }
+
+        [Test]
+        public void CalculatePearsonCoefficient_NoCorelation_ShouldReturnZero()
+        {
+            //Arrange
+            int[] array1 = { 1, 2, 3 };
+            int[] array2 = { 2, 2, 2 };
+            double expectedRes = 0.0;
+            double tolerance = 1e-8;
+
+            //Act
+            double res = recommender.GetCorrelation(array1, array2);
+
+            //Assert
+            Assert.AreEqual(expectedRes, res, tolerance);
+        }
+
     }
 }
