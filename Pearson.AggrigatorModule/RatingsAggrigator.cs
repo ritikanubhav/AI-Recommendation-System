@@ -21,7 +21,7 @@ namespace Pearson.AggrigatorModule
         public Dictionary<string, List<int>> Aggrigate(BookDetails bookDetails, Preference preference)
         {
             //dictionary to store ISBNs as keys and lists of ratings as values
-            Dictionary<string, List<int>> RatingList = new Dictionary<string, List<int>>();
+            Dictionary<string, List<int>> ratingList = new Dictionary<string, List<int>>();
 
             // Filter the list of users based on the given preference (state and age group).
             var preferredUserList = (from u in bookDetails.Users
@@ -32,7 +32,6 @@ namespace Pearson.AggrigatorModule
             //logging Preferred User data to Console
             Console.WriteLine("Total Users of Same Age Group and State: "+preferredUserList.Count);
 
-            var ratingList = new Dictionary<string, List<int>>();
 
             // Aggregate the ratings for each book, only including users that match the preference.
             foreach (var u in bookDetails.UserRatings)
