@@ -1,0 +1,2 @@
+# Mark all bin subfolders as vendored
+**/bin/** linguist-vendored
